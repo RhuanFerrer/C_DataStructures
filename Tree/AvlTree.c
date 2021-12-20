@@ -6,8 +6,6 @@
 #include <string.h>
 #include <time.h>
 
-#include "../../Data/block.h"
-#include "../../Util/Utils.h"
 #include "../DoublyLinkedList/DoublyLinkedList.h"
 #include "../HashTable/HashTable.h"
 
@@ -280,7 +278,8 @@ void AvlBalance(node* CurrentNode, tree* Tree) {
 node* CreateLeaf(void* Info, Node Father) {
     node* leaf = calloc(1, sizeof(node));
 
-    leaf->data = new_list(block_compare_cep, not_to_string, not_free);
+    //implemente as função do parâmetro de acordo com a sua necessidade
+    leaf->data = new_list(Compare, toString, Free);
     list_insert(leaf->data, Info);
 
     leaf->Father = Father;
@@ -515,6 +514,8 @@ List avl_getRecursion(node* current, double x, double y, double w, double h, Lis
 }
 
 List avl_get(AvlTree Tree, double x, double y, double w, double h) {
+
+    //Implemente as funções do parâmetro de acordo com a sua necessidade
     List quadLst = new_list(not_compare, not_to_string, not_free);
 
     avl_getRecursion(avl_root(Tree), x, y, w, h, quadLst);

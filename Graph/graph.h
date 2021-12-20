@@ -4,7 +4,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../../Util/Utils.h"
 #include "../DoublyLinkedList/DoublyLinkedList.h"
 
 #ifndef GRAPH_H
